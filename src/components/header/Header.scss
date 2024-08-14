@@ -1,0 +1,16 @@
+.root-header {
+  position: absolute;
+  top: 2em;
+  right: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 3em;
+  height: 3em;
+  background: white;
+  border-radius: 50%;
+  border: rgba(0, 0, 0, 0.1) solid 1px;
+  // Drop shadow
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
