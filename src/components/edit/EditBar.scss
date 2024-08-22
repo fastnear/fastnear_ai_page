@@ -1,0 +1,37 @@
+.root-edit-bar {
+  position: absolute;
+  top: 2em;
+  left: 2em;
+  right: 6em;
+  display: block;
+  overflow: hidden;
+  min-height: 3em;
+  background: white;
+  border-radius: 1.5em;
+  border: rgba(0, 0, 0, 0.1) solid 1px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+
+  .edit-aria {
+    border-radius: inherit;
+  }
+
+  .button {
+    position: absolute;
+    top: 0.5em;
+    cursor: pointer;
+    border-radius: 50%;
+    height: 2em;
+    width: 2em;
+    display: block;
+    padding: 0;
+  }
+
+  .submit-button {
+    right: 3em;
+  }
+
+  .close-button {
+    right: 0.5em;
+  }
+}

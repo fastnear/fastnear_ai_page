@@ -1,7 +1,6 @@
-.root-header {
+.root-header-button {
   position: absolute;
   top: 2em;
-  right: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,4 +12,12 @@
   border: rgba(0, 0, 0, 0.1) solid 1px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 100;
+}
+
+.main-button {
+  right: 2em;
+}
+
+.edit-button {
+  right: 6em;
 }

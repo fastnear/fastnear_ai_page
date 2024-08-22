@@ -3,7 +3,7 @@ import "./Menu.scss";
 
 export function Menu(props) {
   return (
-    <div className="root-menu">
+    <div className={`root-menu ${props.isOpen ? "" : "visually-hidden"}`}>
       <button
         className="btn btn-outline-secondary close-button"
         onClick={props.onClose}
