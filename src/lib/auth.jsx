@@ -27,7 +27,10 @@ export function redirectToAuthNearLinkDefault(nonce) {
     message: SIGN_IN_MESSAGE,
     recipient: RECIPIENT,
     nonce,
-    callbackUrl: window.location.href,
+    callbackUrl:
+      window.location.origin +
+      window.location.pathname +
+      window.location.search,
   });
 }
 

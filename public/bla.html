@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Matrix Mode</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #0f0;
+      font-family: 'Courier New', monospace;
+    }
+    h1 {
+      text-align: center;
+      text-shadow: 0px 0px 10px #0f0;
+    }
+    .matrix {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .matrix span {
+      position: absolute;
+      font-size: 12px;
+      color: #fff;
+      opacity: 0.1;
+    }
+  </style>
+</head>
+<body>
+<h1>Hello, World!</h1>
+<div class="matrix">
+  <span>01001101</span>
+  <span>01101001</span>
+  <span>01110100</span>
+  <span>01101001</span>
+  <span>01101110</span>
+  <!-- ... -->
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/p5/dist/p5.min.js"></script>
+<script>
+  let matrix = [];
+  let fontSize = 12;
+
+  function setup() {
+    createCanvas(windowWidth, windowHeight);
+    background(0);
+    for (let i = 0; i < width; i += fontSize) {
+      for (let j = 0; j < height; j += fontSize) {
+        matrix.push(new Span(i, j));
+      }
+    }
+  }
+
+  function draw() {
+    background(0);
+    for (let i = matrix.length - 1; i >= 0; i--) {
+      matrix[i].update();
+      matrix[i].show();
+      if (matrix[i].y > height) {
+        matrix.splice(i, 1);
+        matrix.push(new Span(random(width), random(-height)));
+      }
+    }
+  }
+
+  class Span {
+    constructor(x, y) {
+      this.x = x;
+      this.y = y;
+      this.text = String.fromCharCode(Math.floor(Math.random() * (126 - 32)) + 32);
+      this.speed = random(2, 6);
+      this.opacity = random(0.1, 1);
+    }
+
+    update() {
+      this.y += this.speed;
+      this.opacity -= random(0.001, 0.01);
+      if (this.opacity < 0) this.opacity = random(0.1, 1);
+      if (this.y > height) this.y = random(-height);
+      if (this.x > width) this.x = random(width);
+    }
+
+    show() {
+      fill(255 * this.opacity);
+      textSize(fontSize);
+      textAlign(CENTER, CENTER);
+      text(this.text, this.x, this.y);
+      fill(255 * Math.random());
+      textSize(fontSize / Math.random());
+      text(String.fromCharCode(Math.floor(Math.random() * (126 - 32)) + 32), this.x + Math.random() * fontSize / Math.random(), this.y + Math.random() * fontSize / Math.random());
+    }
+  }
+</script>
+
+</body>
+</html>

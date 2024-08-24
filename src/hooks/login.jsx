@@ -20,7 +20,10 @@ export function useHandleLogin() {
         account_id: hashParams.accountId,
         public_key: hashParams.publicKey,
         signature: hashParams.signature,
-        callback_url: hashParams.callbackUrl,
+        callback_url:
+          window.location.origin +
+          window.location.pathname +
+          window.location.search,
         message: SIGN_IN_MESSAGE,
         recipient: RECIPIENT,
         nonce: store.nonce(),
