@@ -114,11 +114,17 @@ Modify the above HTML based on the new prompt.`,
         autoFocus
       />
       <button
-        className="btn btn-outline-secondary button submit-button"
+        className="btn btn-outline-primary button submit-button"
         onClick={submit}
         disabled={loading}
       >
-        {loading ? "*" : "->"}
+        {loading ? (
+          <div class="spinner-grow" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        ) : (
+          <span>&#10140;</span>
+        )}
       </button>
       <button
         className="btn btn-outline-secondary button close-button"

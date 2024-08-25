@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
 
-const DefaultHtml = `<!DOCTYPE html>
+export const DefaultHtml = `<!DOCTYPE html>
 <html lang="en">
 <body>
-  <h1>Hello, World!</h1>
+  <h1 style="margin-top: 3em; text-align: center">Hello, World!</h1>
 </body>
 </html>`;
 

@@ -1,8 +1,8 @@
 import { useMemo } from "react";
 import { useAuthStore } from "../lib/authStore.jsx";
 
-// const CompletionUrl = "https://api.near.ai/v1/chat/completions";
-const CompletionUrl = "http://localhost:3000/api/proxy";
+const CompletionUrl = "https://api.near.ai/v1/chat/completions";
+// const CompletionUrl = "http://localhost:3000/api/proxy";
 
 export function useAI() {
   const authStore = useAuthStore();

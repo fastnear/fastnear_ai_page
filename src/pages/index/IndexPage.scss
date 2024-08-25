@@ -1,0 +1,10 @@
+.page-center {
+  // Center the page content vertically and horizontally
+  // Make one item per row.
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}

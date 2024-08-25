@@ -13,10 +13,36 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 100;
 
+  .btn {
+    border-radius: 1.5em;
+  }
+
   .close-button {
     position: absolute;
-    top: 0.5em;
-    right: 0.5em;
+    top: 1em;
+    right: 1em;
     cursor: pointer;
+    border-radius: 50%;
+    height: 2em;
+    width: 2em;
+    display: block;
+    padding: 0;
+  }
+
+  .sign-out-button {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    right: 1em;
+    border-radius: 1.5em;
+  }
+
+  .account-id {
+    margin: auto;
+    text-align: center;
+    max-width: 14em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: bold;
   }
 }
